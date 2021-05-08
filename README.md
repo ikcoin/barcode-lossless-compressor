@@ -1,0 +1,1 @@
+# barcode-lossless-compressor
