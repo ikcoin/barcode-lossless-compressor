@@ -1,0 +1,2 @@
+#!/bin/bash
+for i in *.png; do python3 encoder.py $i "binBarcodes/$i.bin"; python3 decoder.py "binBarcodes/$i.bin" "newBarcodes/$i-new.png"; python3 mse.py $i "newBarcodes/$i-new.png" >> output.txt; done

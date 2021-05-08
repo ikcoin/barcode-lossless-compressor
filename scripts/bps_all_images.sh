@@ -1,0 +1,2 @@
+#!/bin/bash
+for i in *.png; do python3 encoder.py $i "binBarcodes/$i.bin"; python3 decoder.py "binBarcodes/$i.bin" "newBarcodes/$i-new.png"; size=`ls -all "binBarcodes/$i.bin"`; size=`echo $size |awk '{printf($5)}'`; bps=`echo $size |awk '{printf("%f", ($1*8))}'`; python3 bps.py $i $bps >> bps.txt; done
